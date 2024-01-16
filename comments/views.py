@@ -23,4 +23,5 @@ def main(request):
             print('123')
     user_form = UserForm(request.POST)
     view_comments = Comments.objects.all()
+    print(view_comments)
     return render(request, 'main.html', {'form': user_form, 'comments': view_comments })

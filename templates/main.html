@@ -16,13 +16,17 @@
 </form>
 
 <div class="commentary-list">
-    <div class="commentary-header">
-       {{ comments.name }}
-        <button>
-            Ответить
-        </button>
-    </div>
-
+    {% for commentaries in comments %}
+        <div class="commentary-header">
+            {{ commentaries.name }}
+            <button>
+                Ответить
+            </button>
+        </div>
+        <div class="commentary-body">
+            {{ commentaries.comment_text }}
+        </div>
+    {% endfor %}
 </div>
 </body>
 </html>
