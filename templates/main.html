@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Comments</title>
     <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css">
+    <script src="{% static 'js/script.js' %}"></script>
 </head>
 <body>
 <form method="post" class="user-form" action="{% url 'main' %}">
@@ -15,7 +16,7 @@
     </button>
 </form>
 
-<div class="commentary-list">
+<div class="commentary-list" id="comments-container">
     {% for commentaries in comments %}
         <div class="commentary-header">
             {{ commentaries.name }}
