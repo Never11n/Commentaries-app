@@ -20,12 +20,27 @@
     {% for commentaries in comments %}
         <div class="commentary-header">
             {{ commentaries.name }}
-            <button>
+            <button onclick="selectedCommentId({{ commentaries.id }})">
                 Ответить
             </button>
         </div>
         <div class="commentary-body">
             {{ commentaries.comment_text }}
+        </div>
+        <div class="reply-container">
+            {% if commentaries.replies.exists %}
+                {% for reply in commentaries.replies.all %}
+                    <div class="commentary-header">
+                        {{ reply.name }} ответил/а {{ commentaries.name }}
+                        <button onclick="selectedCommentId({{ commentaries.id }})">
+                            Ответить
+                        </button>
+                    </div>
+                    <div class="commentary-body">
+                        {{ reply.comment_text }}
+                    </div>
+                {% endfor %}
+            {% endif %}
         </div>
     {% endfor %}
 </div>

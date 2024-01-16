@@ -20,12 +20,20 @@ input{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 70%;
+    width: 100%;
     background-color: antiquewhite;
+    margin-top: 1%;
 }
 
 .commentary-header{
     display: flex;
     justify-content: space-between;
-    background-color: #808080;
+    background-color: #d0cece;
+}
+
+.commentary-body{
+    margin: 2% 0;
+}
+.reply-container{
+    margin: 2% 0 2% 10%;
 }
